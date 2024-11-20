@@ -20,7 +20,7 @@
 #' @export
 chat_ollama <- function(system_prompt = NULL,
                             turns = NULL,
-                            base_url = "http://localhost:11434/v1",
+                            base_url = "http://192.164.192.5:11434/v1",
                             model,
                             seed = NULL,
                             api_args = list(),
@@ -50,7 +50,7 @@ chat_ollama <- function(system_prompt = NULL,
 }
 
 ollama_models <- function() {
-  req <- request("http://localhost:11434/api/tags")
+  req <- request("http://192.164.192.5:11434/api/tags")
   resp <- req_perform(req)
   json <- resp_body_json(resp)
 
@@ -61,7 +61,7 @@ ollama_models <- function() {
 has_ollama <- function() {
   tryCatch(
     {
-      req_perform(request("http://localhost:11434/api/tags"))
+      req_perform(request("http://192.164.192.5:11434/api/tags"))
       TRUE
     },
     httr2_error = function(cnd) FALSE
