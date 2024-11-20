@@ -7,7 +7,7 @@
 chat_ollama(
   system_prompt = NULL,
   turns = NULL,
-  base_url = "http://localhost:11434/v1",
+  base_url = "http://192.164.192.5:11434/v1",
   model,
   seed = NULL,
   api_args = list(),
